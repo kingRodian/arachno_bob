@@ -11,11 +11,6 @@
 
 #include "Connection.h"
 
-const std::regex user_cmd_target
-{
-	"(\\.[-\\w]+) ([\\S]*) (.*)"
-};
-
 const std::regex user_cmd
 {
 	"(\\.[-\\w]+)(?: (.*))?"
