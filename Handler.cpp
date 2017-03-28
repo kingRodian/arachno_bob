@@ -108,7 +108,7 @@ void Handler::quit(str_vector args)
 	connection->send_msg(std::string("QUIT" + LINEFEED));
 }
 
-Handler::Handler(Connection* connection, std::string nickname)
+Handler::Handler(const std::shared_ptr<Connection>& connection, std::string nickname)
 : connection(connection), nickname(nickname)
 {
 }

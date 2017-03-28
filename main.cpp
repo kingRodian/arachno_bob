@@ -30,7 +30,6 @@ int main()
 	std::string port{"6660"};
 	bot.connect(host, port);
 	bot.event_loop();
-	bot.quit();
 	
 	return 0;
 }

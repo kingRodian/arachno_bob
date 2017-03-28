@@ -85,7 +85,7 @@ class Handler
 	void quit(str_vector args);
 
 public:
-	Handler(Connection* connection, std::string nickname);
+	Handler(const std::shared_ptr<Connection>& connection, std::string nickname);
 	void handle_msg(str_vector);
 };
 

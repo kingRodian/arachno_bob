@@ -42,7 +42,7 @@ private:
 	std::string user;
 	std::string user_string;
 	int mode;
-	Connection connection;
+	std::shared_ptr<Connection> connection;
 	Buffer buffer;
 	Handler handler;
 	//std::map<std::string, int> user_commands =

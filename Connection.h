@@ -46,7 +46,6 @@ public:
 	}
 	bool get_connection();
 	bool send_msg(const std::string& msg);
-	bool check_socket_status();
 	void close();
 };
 

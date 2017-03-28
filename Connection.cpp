@@ -103,20 +103,6 @@ bool Connection::send_msg(const std::string& msg)
 			
 }
 
-bool Connection::check_socket_status()
-{
-	int error_code;
-	socklen_t error_code_size = sizeof(error_code);
-	getsockopt(socket_fd, SOL_SOCKET, SO_ERROR, &error_code, &error_code_size);
-	if (error_code == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-}
 
 void Connection::close()
 {

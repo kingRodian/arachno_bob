@@ -20,11 +20,12 @@ int Buffer::read_to_buffer()
 	put_position += n;
 	*put_position = '\0';
 	
-	if (n == -1)
+	if (n < 1)
 	{
 		put_position = buffer.begin();
 		*put_position = '\0';
 		bytes_left = LINELEN;
+		return false;
 	}
 	return true;
 }
