@@ -67,7 +67,7 @@ void Handler::sayto(str_vector args)
 {
 	auto n = args.at(MSG).find(" ");
 	std::string target = args.at(MSG).substr(0, n);
-	std::string msg = args.at(MSG).substr(n, std::string::npos);
+	std::string msg = args.at(MSG).substr(n + 1, std::string::npos);
 
 	if (!target.empty())
 	{
