@@ -59,6 +59,8 @@ class Handler
 	{
 		{".say", std::bind(&Handler::say, this, std::placeholders::_1)},
 		{".sayto", std::bind(&Handler::sayto, this, std::placeholders::_1)},
+		{".reverse", std::bind(&Handler::reverse, this, std::placeholders::_1)},
+		{".sort", std::bind(&Handler::sort, this, std::placeholders::_1)},
 		{".join", std::bind(&Handler::join, this, std::placeholders::_1)},
 		{".part", std::bind(&Handler::part, this, std::placeholders::_1)},
 		{".quit", std::bind(&Handler::quit, this, std::placeholders::_1)}
@@ -75,6 +77,8 @@ class Handler
 	//  TODO: Add user commands
 	void say(str_vector args);
 	void sayto(str_vector args);
+	void reverse(str_vector args);
+	void sort(str_vector args);
 	void join(str_vector args);
 	void part(str_vector args);
 	void quit(str_vector args);

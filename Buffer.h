@@ -20,7 +20,7 @@ private:
 	int bytes_left;						// Free bytes left in buffer
 	int socket_fd;
 	std::deque<std::string> msg_queue;
-	std::regex irc_expr{"(?::(\\S+))? ?(\\S+) (\\S*) ?:(.*)"};
+	std::regex irc_expr{"(?::(\\S+))? ?(\\S+) (\\S*) ?:([^\r]+)"};
 
 public:
 	Buffer();

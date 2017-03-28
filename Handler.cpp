@@ -46,6 +46,7 @@ void Handler::privmsg_trigger(str_vector args)
 
 //void Handler::quit_trigger(std::smatch args)
 
+
 void Handler::say(str_vector args)
 {
 	std::string msg = args.at(MSG);
@@ -74,6 +75,41 @@ void Handler::sayto(str_vector args)
 		connection->send_msg(std::string("PRIVMSG " + target + " :" + msg + LINEFEED));
 	}
 }
+
+void Handler::reverse(str_vector args)
+{
+	std::string msg = args.at(MSG);
+	std::reverse(msg.begin(), msg.end());
+
+	std::string target = args.at(TARGET);
+	if (target == nickname)
+	{
+		target = args.at(SENDER);
+		auto n = target.find("!");
+		target = target.substr(0, n);
+	}
+	connection->send_msg(std::string("PRIVMSG " + target + " :" + msg + LINEFEED));
+}
+
+
+void Handler::sort(str_vector args)
+{
+	std::string msg = args.at(MSG);
+	std::sort(msg.begin(), msg.end());
+
+	std::string target = args.at(TARGET);
+	if (target == nickname)
+	{
+		target = args.at(SENDER);
+		auto n = target.find("!");
+		target = target.substr(0, n);
+	}
+	connection->send_msg(std::string("PRIVMSG " + target + " :" + msg + LINEFEED));
+}
+
+
+
+
 
 void Handler::join(str_vector args)
 {
